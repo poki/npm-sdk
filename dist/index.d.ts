@@ -33,6 +33,7 @@ export const PokiSDK: {
     playtestCaptureHtmlOn(): void;
     playtestCaptureHtmlOff(): void;
     movePill(topPercent: number, topPx: number): void;
+    measure(category: string, what: string, action: string): void;
 };
 export default PokiSDK;
 

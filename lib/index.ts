@@ -40,6 +40,7 @@ interface PokiSDKGlobal {
 	playtestCaptureHtmlOn: () => void;
 	playtestCaptureHtmlOff: () => void;
 	movePill: (topPercent: number, topPx: number) => void;
+	measure(category: string, what: string, action: string): void;
 }
 
 type WindowWithPokiSDK = Window & { PokiSDK?: PokiSDKGlobal };
@@ -134,6 +135,9 @@ const PokiSDK = {
 	},
 	movePill(topPercent: number, topPx: number): void {
 		getPokiSDK().movePill(topPercent, topPx);
+	},
+	measure(category: string, what: string, action: string): void {
+		getPokiSDK().measure(category, what, action);
 	},
 };
 
