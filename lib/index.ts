@@ -9,9 +9,20 @@ interface User {
 	avatarUrl: string;
 }
 
+enum RewardedBreakSize {
+	SMALL = 'small',
+	MEDIUM = 'medium',
+	LARGE = 'large',
+}
+
+interface RewardedBreakParams {
+	onStart?: () => void;
+	size?: RewardedBreakSize;
+}
+
 interface PokiSDKGlobal {
 	init: (options: InitOptions) => Promise<void>;
-	rewardedBreak: () => Promise<boolean>;
+	rewardedBreak: (onStart?: () => void | RewardedBreakParams) => Promise<boolean>;
 	commercialBreak: (onStart?: () => void) => Promise<void>;
 	displayAd: (
 		container: HTMLElement,
