@@ -11,6 +11,10 @@ interface User {
 }
 
 type RewardedBreakSize = 'small' | 'medium' | 'large';
+type DeviceCategory = 'mobile' | 'tablet' | 'desktop';
+interface DeviceInfo {
+	category: DeviceCategory;
+}
 
 type MeasureCategory =
 	| 'achievement'
@@ -42,12 +46,7 @@ type MeasureCategory =
 	| string;
 
 type MeasureAction =
-	| 'start'
-	| 'complete'
-	| 'fail'
-	| 'visible'
-	| 'interact'
-	| string;
+	'start' | 'complete' | 'fail' | 'visible' | 'interact' | string;
 
 interface RewardedBreakParams {
 	onStart?: () => void;
@@ -70,6 +69,7 @@ interface PokiSDKGlobal {
 	shareableURL: (params?: { [key: string]: any }) => Promise<string>;
 	getURLParam: (key: string) => string;
 	getLanguage: () => string;
+	getDeviceInfo: () => DeviceInfo;
 	getUser: () => Promise<User | null>;
 	getToken: () => Promise<string | null>;
 	login: () => Promise<void>;
@@ -136,6 +136,9 @@ const PokiSDK = {
 	},
 	getLanguage(): string {
 		return getPokiSDK().getLanguage();
+	},
+	getDeviceInfo(): DeviceInfo {
+		return getPokiSDK().getDeviceInfo();
 	},
 	getUser(): Promise<User | null> {
 		return getPokiSDK().getUser();

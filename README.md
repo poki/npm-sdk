@@ -72,6 +72,7 @@ If the Poki SDK script is not loaded, this package will throw `PokiSDK not loade
 - `shareableURL(params?: Record<string, any>): Promise<string>`
 - `getURLParam(key: string): string`
 - `getLanguage(): string`
+- `getDeviceInfo(): { category: 'mobile' | 'tablet' | 'desktop' }`
 
 ### UI (see [documentation](https://sdk.poki.com/html5.html#moving-the-poki-pill-on-mobile) for details)
 
