@@ -6,9 +6,6 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "targets": {
-    "types": {
-      "source": "lib/index.ts"
-    },
     "main": {
       "source": "lib/index.ts"
     }
@@ -24,16 +21,13 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "parcel build",
+    "build": "parcel build --target main && tsc -p tsconfig.build.json",
     "lint": "prettier --write lib/index.ts && tsc --noEmit"
   },
   "dependencies": {},
   "devDependencies": {
-    "@parcel/packager-ts": "^2.16.4",
-    "@parcel/transformer-typescript-types": "^2.16.4",
     "parcel": "^2.16.4",
     "prettier": "^3",
-    "ts-node": "^10.9.2",
     "typescript": "^7.0.2"
   },
   "engines": {
