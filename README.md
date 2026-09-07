@@ -82,7 +82,7 @@ If the Poki SDK script is not loaded, this package will throw `PokiSDK not loade
 ### Analytics, Tracking, and Errors
 
 - `measure(category: MeasureCategory, what: string, action: MeasureAction): void`
-- `enableEventTracking(cmpIndex?: number): void`
+- `enableEventTracking(): void`
 - `captureError(err: string | Error): void`
 
 ### Accounts

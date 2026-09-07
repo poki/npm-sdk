@@ -41,7 +41,7 @@ declare const PokiSDK: {
     gameplayStop(): void;
     setDebug(toggle?: boolean): void;
     setLogging(toggle: boolean): void;
-    enableEventTracking(cmpIndex?: number): void;
+    enableEventTracking(): void;
     openExternalLink(url: string): void;
     playtestSetCanvas(canvas: HTMLCanvasElement | HTMLCanvasElement[] | null): void;
     playtestCaptureHtmlOnce(): void;

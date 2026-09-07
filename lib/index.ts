@@ -80,7 +80,7 @@ interface PokiSDKGlobal {
 	gameplayStop: () => void;
 	setDebug: (toggle?: boolean) => void;
 	setLogging: (toggle: boolean) => void;
-	enableEventTracking: (cmpIndex?: number) => void;
+	enableEventTracking: () => void;
 	openExternalLink: (url: string) => void;
 	playtestSetCanvas: (
 		canvas: HTMLCanvasElement | HTMLCanvasElement[] | null
@@ -170,8 +170,8 @@ const PokiSDK = {
 	setLogging(toggle: boolean): void {
 		getPokiSDK().setLogging(toggle);
 	},
-	enableEventTracking(cmpIndex?: number): void {
-		getPokiSDK().enableEventTracking(cmpIndex);
+	enableEventTracking(): void {
+		getPokiSDK().enableEventTracking();
 	},
 	openExternalLink(url: string): void {
 		getPokiSDK().openExternalLink(url);
