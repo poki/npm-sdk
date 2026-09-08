@@ -15,7 +15,7 @@ interface RewardedBreakParams {
     onStart?: () => void;
     size?: RewardedBreakSize;
 }
-export const PokiSDK: {
+declare const PokiSDK: {
     init(options?: InitOptions): Promise<void>;
     rewardedBreak(onStartOrArgs?: (() => void) | RewardedBreakParams): Promise<boolean>;
     commercialBreak(onStart?: () => void): Promise<void>;
@@ -46,6 +46,5 @@ export const PokiSDK: {
     movePill(topPercent: number, topPx: number): void;
     measure(category: MeasureCategory, what: string, action: MeasureAction): void;
 };
+export { PokiSDK };
 export default PokiSDK;
-
-//# sourceMappingURL=index.d.ts.map
