@@ -9,6 +9,10 @@ interface User {
     optedIn: boolean;
 }
 type RewardedBreakSize = 'small' | 'medium' | 'large';
+type DeviceCategory = 'mobile' | 'tablet' | 'desktop';
+interface DeviceInfo {
+    category: DeviceCategory;
+}
 type MeasureCategory = 'achievement' | 'booster' | 'boss' | 'button' | 'checkpoint' | 'cosmetic' | 'death' | 'drawing' | 'economy' | 'enemy' | 'hint' | 'item' | 'level' | 'mode' | 'pet' | 'player' | 'powerup' | 'puzzle' | 'quest' | 'round' | 'skip-level' | 'stage' | 'tutorial' | 'upgrade' | 'wave' | 'world' | string;
 type MeasureAction = 'start' | 'complete' | 'fail' | 'visible' | 'interact' | string;
 interface RewardedBreakParams {
@@ -26,6 +30,7 @@ declare const PokiSDK: {
     }): Promise<string>;
     getURLParam(key: string): string;
     getLanguage(): string;
+    getDeviceInfo(): DeviceInfo;
     getUser(): Promise<User | null>;
     getToken(): Promise<string | null>;
     login(): Promise<void>;
